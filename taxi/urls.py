@@ -1,8 +1,11 @@
 from django.urls import path
 
-from .views import (index, ManufacturerListView,
-                    CarListView, CarDetailView,
-                    DriverListView, DriverDetailView
+from .views import (index,
+                    ManufacturerListView,
+                    CarListView,
+                    CarDetailView,
+                    DriverListView,
+                    DriverDetailView
                     )
 
 urlpatterns = [
@@ -15,7 +18,7 @@ urlpatterns = [
          name="car-detail",),
     path("drivers/", DriverListView.as_view(),
          name="driver-list",),
-    path("drivers/<int:pk>", DriverDetailView.as_view(),
+    path("drivers/<int:pk>/", DriverDetailView.as_view(),
          name="driver-detail",),
 
 ]
